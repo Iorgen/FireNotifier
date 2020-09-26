@@ -38,8 +38,8 @@ services:
     restart: on-failure
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    ports:
-      - 54320:5432
+#    ports:
+#      - 5432:5432
 
   firemonitor:
     build:
@@ -62,7 +62,37 @@ services:
       - firemonitor-internal
     restart: on-failure
     environment:
-      - DJANGO_SETTING_MODULE=FireMonitoring.develop
+      DJANGO_SETTING_MODULE: FireMonitoring.develop
+
+    env_file:
+      - environ/.env.dev
+
+  firemonitor-worker:
+    command: sh -c "celery -E --app=FireMonitoring worker --loglevel=INFO --concurrency=2"
+    container_name: celery_worker
+    depends_on:
+      - firemonitor
+      - firemonitor_db
+      - firemonitor_redis
+    hostname: firemonitor-worker
+    image: firemonitor-image
+    restart: on-failure
+    env_file:
+      - environ/.env.dev
+    networks:
+      - firemonitor-internal
+
+  firemonitor-beat:
+    command: sh -c "celery -A FireMonitoring beat --loglevel=INFO"
+    depends_on:
+      - firemonitor
+      - firemonitor_db
+      - firemonitor_redis
+    hostname: firemonitor-beat
+    image: firemonitor-image
+    networks:
+      - firemonitor-internal
+    restart: on-failure
     env_file:
       - environ/.env.dev
 

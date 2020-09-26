@@ -13,6 +13,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from .base import *
+from celery.schedules import crontab
 import os
 DEBUG = True
 SECRET_KEY = 'r*=%h-z)t(9dn7lqz^vx-hq9sh!n&zcu-n+u_e##!%+e(tuqw0'
@@ -49,6 +50,23 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CASCADE_URL = 'http://kaskad.ukmmchs.ru'
+
+CELERY_BROKER_URL = 'redis://firemonitor_redis:6379/0'
+CELERY_RESULT_BACKEND = 'django-db'
+CELERY_CACHE_BACKEND = 'django-cache'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+
+CELERY_TIMEZONE = 'Asia/Novosibirsk'
+
+# Celery cron tab settings
+CELERY_BEAT_SCHEDULE = {
+    'fetch_thermal_points_by_date_task': {
+        'task': 'monitor.tasks.fetch_thermal_points_by_date_task',
+        'schedule': crontab(minute='*/1'),
+    },
+}
 
 
 
