@@ -23,10 +23,10 @@ DATABASES = {
         "NAME": 'fire_database',
         "USER": 'fire_user',
         "PASSWORD": '123456',
-        # "HOST": 'firemonitor_db',
-        # "PORT": '5432',
-        "HOST": 'localhost',
-        "PORT": '54320',
+        "HOST": 'firemonitor_db',
+        "PORT": '5432',
+        # "HOST": 'localhost',
+        # "PORT": '54320',
     }
 }
 

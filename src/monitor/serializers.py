@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from monitor.models import ThermalPoint
+from monitor.models import ThermalPoint, FireObject
 
 
 class ThermalPointSerializer(serializers.ModelSerializer):
@@ -8,3 +8,9 @@ class ThermalPointSerializer(serializers.ModelSerializer):
         model = ThermalPoint
         fields = '__all__'
 
+
+class FireObjectSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = FireObject
+        fields = '__all__'
