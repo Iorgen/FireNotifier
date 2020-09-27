@@ -18,7 +18,6 @@ logger = get_task_logger(__name__)
 @shared_task(name="fetch_thermal_points")
 def fetch_thermal_points_by_date_task() -> None:
     date_from = datetime.datetime(2020, 6, 25)
-    # THIS date is dummy and does not mean anything )_)())
     date_to = datetime.datetime(2020, 6, 26)
     get_all_thermal_points_by_date(date_from,date_to)
     logger.info('You it is task')
