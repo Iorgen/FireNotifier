@@ -3,7 +3,7 @@
 ###########
 
 # pull  official base image
-FROM python:3.8 as builder
+FROM python:3.7 as builder
 
 # set work directory
 WORKDIR /usr/src/backend
@@ -29,7 +29,7 @@ RUN pip3 wheel --no-cache-dir --no-deps --wheel-dir /usr/src/backend/wheels -r r
 # FINAL #
 #########
 # pull official base image
-FROM python:3.8
+FROM python:3.7
 
 # create directory for the app user
 RUN mkdir -p /home/backend
@@ -47,7 +47,7 @@ WORKDIR $APP_HOME
 
 
 # install dependencies
-RUN apt-get update && apt-get install libpq-dev && apt-get install -y netcat
+RUN apt-get update && apt-get install -y libpq-dev && apt-get install -y netcat
 COPY --from=builder /usr/src/backend/wheels /wheels
 COPY --from=builder /usr/src/backend/requirements.txt .
 RUN pip3 install --upgrade pip

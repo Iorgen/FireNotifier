@@ -27,7 +27,6 @@ def fetch_thermal_points_by_date_task() -> None:
 
 @shared_task(name="fetch_fire_square")
 def fetch_fire_squares_by_date_task() -> None:
-
     get_all_fire_square_by_date(datetime.datetime(2020, 6, 25), datetime.datetime(2020, 6, 26))
     logger.info('You it is task')
     return None

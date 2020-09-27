@@ -64,7 +64,7 @@ CELERY_TIMEZONE = 'Asia/Novosibirsk'
 CELERY_BEAT_SCHEDULE = {
     'fetch_thermal_points_by_date_task': {
         'task': 'monitor.tasks.fetch_thermal_points_by_date_task',
-        'schedule': crontab(minute='*/1'),
+        'schedule': crontab(minute='*/10'),
     },
 }
 

@@ -19,14 +19,22 @@ class ThermalPoint(models.Model):
         ('EXT', 'extinguished'),
         ('BRN', 'burning')
     ]
+    date_added = models.DateTimeField(default=timezone.now())
+
     xi = models.FloatField(null=True)
     xa = models.FloatField(null=True)
     yi = models.FloatField(null=True)
     ya = models.FloatField(null=True)
 
-    land_category = models.ForeignKey(LandCategory, on_delete=models.CASCADE, null=True)
+    land_category = models.CharField(max_length=100, null=True)
     fire_status = models.CharField(max_length=3, default='BRN', choices=POINT_STATUS)
 
+    nearest_city_distance = models.FloatField(null=True)
+    city = models.CharField(max_length=100, null=True)
+    county = models.CharField(max_length=100, null=True)
+    state = models.CharField(max_length=100, null=True)
+
+    satelite_image = models.ImageField(default='default.jpg', upload_to='satelites')
     # fyre_type_prediction_result
     # Smoke and fire mask
     # Earth category by API or MODEL

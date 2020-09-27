@@ -18,7 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #
-    path('api/v1/', include('monitor.urls'))
+    path('api/v1/', include('monitor.urls')),
+    path('', include('fire_predictor.urls'))
 
 ]

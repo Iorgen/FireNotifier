@@ -3,6 +3,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
+    'fire_predictor.apps.FirePredictorConfig',
     'monitor.apps.MonitorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,6 +43,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'FireMonitoring.wsgi.application'
 

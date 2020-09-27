@@ -12,6 +12,7 @@ then
 fi
 
 python3 manage.py migrate
+python3 manage.py migrate django_celery_results
 python3 manage.py collectstatic --no-input
 
 exec "$@"

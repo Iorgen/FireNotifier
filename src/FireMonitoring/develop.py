@@ -62,8 +62,8 @@ CELERY_TIMEZONE = 'Asia/Novosibirsk'
 # Celery cron tab settings
 CELERY_BEAT_SCHEDULE = {
     'fetch_thermal_points_by_date_task': {
-        'task': 'monitor.tasks.fetch_thermal_points',
-        'schedule': crontab(minute='*/1'),
+        'task': 'monitor.tasks.fetch_thermal_points_by_date_task',
+        'schedule': crontab(minute='*/2'),
     },
 }
 
