@@ -1,0 +1,133 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Tahoma, serif;
+    font-size: 14px;
+}
+
+#wrap {
+    position: relative;
+}
+
+#toolbar {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 999;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 15px;
+    width: 540px;
+    height: 90%;
+    overflow-y: auto;
+}
+
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+.ymap-container {
+    height: 100%;
+}
+
+.points {
+    margin-top: 15px;
+}
+
+.points .point {
+    font-size: 13px;
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.points .point > div:nth-child(1) {
+    width: 120px;
+    font-size: 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.points .point > div:nth-child(1) span {
+    font-size: 11px;
+    color: #acacac;;
+}
+
+.points .point > div:nth-child(2) {
+    width: 190px;
+    padding-left: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.points .point.priority-1 > div:nth-child(2) {
+    color: #fc4242;
+}
+
+.points .point.priority-2 > div:nth-child(2) {
+    color: #fc7742;
+}
+
+.points .point.priority-3 > div:nth-child(2) {
+    color: #fcb842;
+}
+
+.points .point.priority-4 > div:nth-child(2) {
+    color: #fcf9f9;
+}
+
+.points .point.priority-5 > div:nth-child(2) {
+    color: #ffffff;
+}
+
+.points .point > div:nth-child(3) {
+    color: #acacac;
+    padding-left: 15px;
+    width: 230px;
+}
+
+.points .point div.burning {
+    color: #fc4242;
+}
+
+.placemark_layout_container {
+    position: relative;
+    font-size: 11px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.rounded_corners_box_layout {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: -49px;
+    top: -10px;
+    width: 98px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    line-height: 18px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+}
+
+.rounded_corners_box_layout div:nth-child(1) {
+    padding-top: 1px;
+    width: 20px;
+    background-color: #848484;
+}
+
+.rounded_corners_box_layout div:nth-child(2) {
+    width: 38px;
+    background-color: #848484;
+}
+
+.rounded_corners_box_layout div:nth-child(3) {
+    width: 40px;
+}
+
+.wind-direction-arrow {
+    height: 11px;
+}
