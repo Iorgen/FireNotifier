@@ -105,7 +105,7 @@ ymaps.ready().then(function () {
     });
 
     // Загружаем скорость и направления ветра с метеостанций
-    jsonUrl = 'http://localhost:88/';
+    jsonUrl = 'http://168.119.6.164:88/';
 
     // Создание метки с круглой активной областью.
     var windLayer = '<div class="placemark_layout_container">' +
