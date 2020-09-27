@@ -20,7 +20,7 @@ class ThermalPointView(ListAPIView):
             raise Http404
 
     def get(self, request, *args, **kwargs):
-        fetch_thermal_points_by_date_task()
+        # fetch_thermal_points_by_date_task()
         # fetch_fire_squares_by_date_task()
         return self.list(request, *args, **kwargs)
 
@@ -38,6 +38,6 @@ class FireObjectView(ListAPIView):
             raise Http404
 
     def get(self, request, *args, **kwargs):
-        # fetch_thermal_points_by_date_task()
+        fetch_thermal_points_by_date_task()
         # fetch_fire_squares_by_date_task()
         return self.list(request, *args, **kwargs)
