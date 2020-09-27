@@ -19,7 +19,7 @@ body {
     color: #fff;
     padding: 15px;
     width: 540px;
-    height: 90%;
+    max-height: 90%;
     overflow-y: auto;
 }
 
