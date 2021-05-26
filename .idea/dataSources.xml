@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:54320/fire_database</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="fire_database@178.79.133.32" uuid="0c9b77b1-cdea-4a2e-a9db-618b706eb462">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://178.79.133.32:54320/fire_database</jdbc-url>
+    </data-source>
   </component>
 </project>
