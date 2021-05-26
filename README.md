@@ -1,3 +1,6 @@
+Исследования и модели
+https://github.com/NikolayTV/https-github.com-Iorgen-FireNotifier
+
 .idea
 *venv
 pycache
